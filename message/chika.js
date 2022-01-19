@@ -114,8 +114,8 @@ module.exports = async(chika, msg, m, ind, setting) => {
         
         //Please dont edit for urlbutton 
         const buttonsDefault = [
-            { callButton: {displayText: `☎ ️Call Owner`, phoneNumber: `+628127668234`} },
-            { urlButton: { displayText: `💠 Script Bot`, url : `https://github.com/rashidsiregar28/chikabot`} },
+            { callButton: {displayText: `☎ ️Call Owner`, phoneNumber: `+6289614412045`} },
+            { urlButton: { displayText: `💠 WhatsApp Owner`, url : `https://wa.me/6289614412045`} },
             { quickReplyButton: { displayText: `🧑 Owner`, id: `${prefix}owner` } },
             { quickReplyButton: { displayText: `🎛️ Rules`, id: `${prefix}rules` } }
         ]
@@ -166,15 +166,15 @@ module.exports = async(chika, msg, m, ind, setting) => {
                     sendContact(from, x.split('@s.whatsapp.net')[0], 'Owner of - ' + botNumber, msg)
                 }
             break
-            case prefix+'menu': case prefix+'help':{
+            case prefix+'menutes': case prefix+'help':{
                 textTemplateButtons(from, `Hai kak ${pushname} 👋, saya *${botName}*\n\nBot ini adalah Beta *Multi-Device* Whatsapp.`, `Jika kamu menemukan semacam bug atau kesalahan mohon dimaklumi dulu ya 😖, Lapor Owner Jika Perlu atau Mendesak 🙏`, buttonsDefault)
             }
             break
-            case prefix+'allmenu': {
+            case prefix+'menu': {
                 try {
-                    var prof = await chika.profilePictureUrl(sender, 'image')
+                    var prof = 'https://i.ibb.co/PG16YDS/Screenshot-2022-01-19-14-47-11-03.png'
                 } catch {
-                    var prof = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+                    var prof = 'https://i.ibb.co/PG16YDS/Screenshot-2022-01-19-14-47-11-03.png'
                 }
                 sendFileFromUrl(from, prof, ind.listMenu(time, salam, pushname, prefix), msg)
             }
@@ -418,7 +418,7 @@ module.exports = async(chika, msg, m, ind, setting) => {
                 }
 	        break
             //Downloader
-            case prefix+'tiktok':
+            case prefix+'tiktok': case prefix+'tt': 
                 if (!q) return textImg(ind.wrongFormat(prefix))
                 if (!isUrl(q)) return textImg(ind.wrongFormat(prefix))
                 if (!q.includes('tiktok.com')) return textImg(ind.wrongFormat(prefix))
