@@ -171,12 +171,7 @@ module.exports = async(chika, msg, m, ind, setting) => {
             }
             break
             case prefix+'menu': {
-                try {
-                    var prof = 'https://i.ibb.co/PG16YDS/Screenshot-2022-01-19-14-47-11-03.png'
-                } catch {
-                    var prof = 'https://i.ibb.co/PG16YDS/Screenshot-2022-01-19-14-47-11-03.png'
-                }
-                sendFileFromUrl(from, prof, ind.listMenu(time, salam, pushname, prefix), msg)
+                textTemplateButtons(sendFileFromUrl(from, {video: {url: "./lib/hisokam.mp4"}, gifPlayback: true, gifAttribution: "GIPHY"}, ind.listMenu(time, salam, pushname, prefix), msg))
             }
             break
             // Owner
