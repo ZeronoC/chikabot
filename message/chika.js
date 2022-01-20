@@ -170,10 +170,15 @@ module.exports = async(chika, msg, m, ind, setting) => {
                 textTemplateButtons(from, `Hai kak ${pushname} 👋, saya *${botName}*\n\nBot ini adalah Beta *Multi-Device* Whatsapp.`, `Jika kamu menemukan semacam bug atau kesalahan mohon dimaklumi dulu ya 😖, Lapor Owner Jika Perlu atau Mendesak 🙏`, buttonsDefault)
             }
             break
-         /*  case prefix+'menu': {
-               textTemplateButtons(sendFileFromUrl(from, {video: {url: "./lib/hisokam.mp4"}, gifPlayback: true, gifAttribution: "GIPHY"}, ind.listMenu(time, salam, pushname, prefix), msg))
-          }
-            break*/
+         case prefix+'menu': {
+              try {
+                    var prof = 'https://i.ibb.co/PG16YDS/Screenshot-2022-01-19-14-47-11-03.png'
+                } catch {
+                    var prof = 'https://i.ibb.co/PG16YDS/Screenshot-2022-01-19-14-47-11-03.png'
+                }
+                sendFileFromUrl(from, prof, ind.listMenu(time, salam, pushname, prefix), msg)
+  }
+            break
             // Owner
             case prefix+'join': case prefix+'joingc': {
                 if (!isOwner && !fromMe) return reply(ind.ownerOnly())
